@@ -1,0 +1,227 @@
+h1 {
+    color:rgb(128, 240, 188);
+    display: inline;
+    min-height: 50px;
+    max-height: 150px;
+}
+a{
+    text-decoration: none;
+    font-size: 20px;
+}
+body{
+background: #f7f7f7 url("../Background/hold-fast.gif") repeat;
+margin: 0;
+}
+.TopBar{
+    min-height: 100px; /*think after*/
+    max-height: 200px;
+    width: 100%;
+    position: sticky;
+    top: 1%;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:rgb(81, 104, 153);
+    outline: solid;
+}
+.TopBar>* { /*NOT SO SURE*/
+    min-height: 50px;
+    max-height: 150px;
+    width: 20%;
+}
+
+.card{
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quote{
+    size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    position: absolute;
+}
+.card::before{
+    content: '';
+    background-color: antiquewhite;
+    height: 10%;
+    width: 100%;
+    transform: scaleY(0);
+    transition: transform ease-out 1s;
+}
+.card:hover::before{
+    transform: scaleY(10);
+}
+.card:hover .quote{
+    color: darkseagreen;
+    transition: color ease-out 0.3s;
+}
+
+.card2{
+    height: 100px;
+    width: 100px;
+    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: inherit;
+    overflow: hidden;
+}
+.quote2{
+    size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    position: absolute;
+    padding: 40px;
+}
+.card2::before{
+    content: '';
+    background-color: antiquewhite;
+    height: 10%;
+    width: 100%;
+    transition: transform ease-out 1s;
+    position: absolute;
+    bottom: 0; right: 0;
+    transform-origin: bottom;
+}
+.card2:hover::before{
+    transform: scaleY(10);
+    transform-origin: 0 100%;
+}
+
+/*SHAPE-SHIFTER*/
+.Mcgonagall{
+    width: 100px;
+    height: 100px;
+    background-color: violet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s linear,
+                border-radius 0.3s ease-in-out;
+}
+.Mcgonagall:hover{
+    border-radius: 25px;
+    transform: rotate(360deg);
+}
+/*.cup{}*/
+
+/*Fading in card*/
+.cardFade{
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.7s ease-in-out;
+    position: relative;
+}
+.cardFade:hover{
+    /*box-shadow: inset 0px 1px 10px #810c0c;    
+    transition: box-shadow 1s ease-out; GOD DAMN LOOKING COOL*/
+    box-shadow: inset 0px 0px 0px 15px #000000;
+    cursor: grab;
+}
+.cardFade::before{
+    content: "";
+    /*background-color: aqua;*/
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    border: 1px solid;
+    box-sizing: border-box;
+}   
+.inside{
+    font-size: 90%;
+}
+
+/* Video section*/
+.Cosa{
+    padding: 500px 0;
+    margin-bottom: 300px;
+    margin-top: 300px;
+    background: rgba(51, 51, 51, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+} /*If need, you can put an overlay div*/
+.Toronto{
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+:root {
+    --minh: 98vh;
+    --color1: wheat;
+    --color2: midnightblue;
+}  
+.curtain {
+    /** create the "split" background **/
+    background-image: linear-gradient(to bottom, var(--color2) 50%, var(--color1) 50%);
+}
+  /** add extra space to the bottom (need this for the "sticky" effect) **/
+.curtain::after {
+    content: "";
+    display: block;
+    min-height: var(--minh);
+}  
+.invert {
+    /** make the content sticky **/
+    position: sticky;
+    top: 20px;
+  
+    /** blend the content with the contrast effect **/
+    mix-blend-mode: difference;
+  
+    /** center the content **/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /** set the minimum height of the section **/
+    min-height: var(--minh);
+}
+  
+h2 {
+    /** set the color of the text **/
+    color: var(--color1);
+}
+
+/*Slide Bar*/
+.container {
+    display: flex;
+    margin-top: 50px;
+}
+.item {
+    position: relative;
+    flex: 1 1 100%;
+    transition: transform 500ms;
+}
+.container:hover .item {
+    transform: translateX(-25%);
+}
+.item:hover ~ .item {
+    transform: translateX(25%);
+}
+.container .item:hover {
+    transform: scale(1.5);
+    z-index: 1;
+}  
+.item img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+  
