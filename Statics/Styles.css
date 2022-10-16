@@ -1,3 +1,12 @@
+:root{
+    --bgorange: rgb(255, 115, 29);
+    --bgcolor: rgb(255, 247, 233);
+    --bgblue: rgb(95, 157, 247);
+    --bgdark: rgb(23, 70, 162);
+    --minh: 98vh;
+    --color1: wheat;
+    --color2: midnightblue;
+}  
 h1 {
     color:rgb(128, 240, 188);
     display: inline;
@@ -9,25 +18,25 @@ a{
     font-size: 20px;
 }
 body{
-background: #f7f7f7 url("../Background/hold-fast.gif") repeat;
-margin: 0;
+background: var(--bgcolor);
 }
 .TopBar{
-    min-height: 100px; /*think after*/
-    max-height: 200px;
+    min-height: 110px; /*think after*/
+    max-height: 210px;
     width: 100%;
     position: sticky;
-    top: 1%;
+    top: 0;
     display: flex;
     align-content: center;
     justify-content: space-evenly;
     align-items: center;
-    background-color:rgb(81, 104, 153);
-    outline: solid;
+    z-index: 4;
 }
-.TopBar>* { /*NOT SO SURE*/
+.TopBar div { /*NOT SO SURE*/
     min-height: 50px;
     max-height: 150px;
+}
+.TopBar h1{
     width: 20%;
 }
 
@@ -69,7 +78,6 @@ margin: 0;
     align-items: center;
     justify-content: center;
     position: inherit;
-    overflow: hidden;
 }
 .quote2{
     size: 20px;
@@ -108,7 +116,6 @@ margin: 0;
     border-radius: 25px;
     transform: rotate(360deg);
 }
-/*.cup{}*/
 
 /*Fading in card*/
 .cardFade{
@@ -137,36 +144,34 @@ margin: 0;
     right: 10%;
     border: 1px solid;
     box-sizing: border-box;
-}   
-.inside{
-    font-size: 90%;
 }
 
 /* Video section*/
 .Cosa{
-    padding: 500px 0;
-    margin-bottom: 300px;
-    margin-top: 300px;
-    background: rgba(51, 51, 51, 0.5);
+    height: 85vh;
+    width: 90%;
+    background: rgba(3, 168, 244, 0.250);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
-} /*If need, you can put an overlay div*/
+    left: 5%;
+    box-shadow: 1.3vh 1.3vh 0 0.626vh var(--bgdark);
+}
 .Toronto{
     position: absolute;
     left: 0;
     min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: scale-down;
     z-index: -1;
 }
-:root {
-    --minh: 98vh;
-    --color1: wheat;
-    --color2: midnightblue;
-}  
+.blabla{
+    height: 20vh;
+}
+
+/*REVERB*/
 .curtain {
     /** create the "split" background **/
     background-image: linear-gradient(to bottom, var(--color2) 50%, var(--color1) 50%);
@@ -193,7 +198,6 @@ margin: 0;
     /** set the minimum height of the section **/
     min-height: var(--minh);
 }
-  
 h2 {
     /** set the color of the text **/
     color: var(--color1);
@@ -202,11 +206,11 @@ h2 {
 /*Slide Bar*/
 .container {
     display: flex;
-    margin-top: 50px;
+    margin: 20vh 10vh 25vh;
 }
 .item {
     position: relative;
-    flex: 1 1 100%;
+    flex: 1 1 100px;
     transition: transform 500ms;
 }
 .container:hover .item {
@@ -218,10 +222,19 @@ h2 {
 .container .item:hover {
     transform: scale(1.5);
     z-index: 1;
-}  
+}
 .item img {
-    max-width: 100%;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
-  
+
+/*Last element*/
+.about-us{
+    height: 20vh;
+    width: 90%;
+    background-color: var(--bgblue);
+    margin: 10vh;
+    box-shadow: 0 0 0px 1vh white,
+     inset 0 0 20px 0.25vh var(--bgdark); /*OR bgcolor*/
+}
