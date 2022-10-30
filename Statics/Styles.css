@@ -241,6 +241,7 @@ h2 {
     margin: 10vh;
     box-shadow: 0 0 0px 1vh white,
      inset 0 0 20px 0.25vh var(--bgdark); /*OR bgcolor*/
+    position: relative;
 }
 /*.about-us:hover{
     box-shadow: inset 0px 10px 20px #810c0c;
@@ -253,4 +254,11 @@ h2 {
     font-weight: normal;
     font-style: normal;
 
+}
+.signiture{
+    object-fit: contain;
+    height: 80%;
+    position: relative;
+    left: 40%;
+    top: 10%;
 }
